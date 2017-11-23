@@ -27,8 +27,8 @@ def expand_lemma_to_surface_forms(lemma_to_expand, language_code):
 
 
 def get_related_morphological_forms(word_to_reinflect, language_code='sv'):
-    lemma = lemmatize(word_to_reinflect,language_code)
-    expanded_forms = expand_lemma_to_surface_forms(lemma,language_code)
+    lemma = lemmatize(word_to_reinflect, language_code)
+    expanded_forms = expand_lemma_to_surface_forms(lemma, language_code)
     return expanded_forms
 
 
