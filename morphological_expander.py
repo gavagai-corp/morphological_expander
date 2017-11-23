@@ -24,12 +24,12 @@ def expand_lemma_to_surface_forms(lemma_to_expand, language_code):
 def get_related_morphological_forms(word_to_reinflect, language_code='sv'):
     lemma = lemmatize(word_to_reinflect, language_code)
     expanded_forms = expand_lemma_to_surface_forms(lemma, language_code)
-    return expanded_forms
+    return sorted(expanded_forms, key=lambda x: len(x)) # I admit sorting by length is a little meaningless.
 
 
 def pretty_print(results):
     if len(results) > 0:
-        for item in sorted(results, key=lambda x: len(x)):
+        for item in results:
             print(item.encode('utf8'))
     else:
         print('Not in resource.')
