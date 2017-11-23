@@ -5,7 +5,7 @@ import sys
 def lemmatize(surface_form, language_code):
     with open('resources/' + language_code + '.txt', encoding='utf8') as f:
         for line in f:
-            if re.search(r'\t'+surface_form+'\t', line):
+            if re.search(r'\t' + surface_form + '\t', line):
                 lemma = line.split('\t')[0]  # Each line contains: lemma surface_form details
                 return lemma
         return 'Not in resource.'
@@ -37,7 +37,9 @@ if __name__ == '__main__':
     try:
         language_code = sys.argv[2]
         print('Expanding {0}. Language code is {1}.'.format(input_word, language_code))
-        get_related_morphological_forms(input_word, language_code)
-    except ValueError:
+        output = get_related_morphological_forms(input_word, language_code)
+    except IndexError:
         print('Expanding {0}. No language code provided. Default is Swedish (sv).'.format(input_word))
-        get_related_morphological_forms(input_word)
+        output = get_related_morphological_forms(input_word)
+    for item in sorted(output, key=lambda x: len(x)):
+        print(item)
