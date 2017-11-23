@@ -4,7 +4,7 @@ A Python wrapper to mophologically expand terms using the UniMorph knowledge bas
 
 # Usage
 
-Runs with Python from the command line. Takes two arguments, the word to re-inflect and the corresponding language code (ISO 639). If no code is provided, Swedish (sv) is taken as the default.
+Runs with Python from the command line. Takes two arguments, the word to be re-inflected and the corresponding language code (ISO 639). If no code is provided, Swedish (sv) is taken as the default.
 
 ## Example
 
