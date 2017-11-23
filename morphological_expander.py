@@ -28,9 +28,9 @@ def get_related_morphological_forms(word_to_reinflect, language_code='sv'):
 
 
 def pretty_print(results):
-    if len(results)>0:
+    if len(results) > 0:
         for item in sorted(results, key=lambda x: len(x)):
-            print(item)
+            print(item.encode('utf8'))
     else:
         print('Not in resource.')
 
