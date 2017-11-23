@@ -14,12 +14,12 @@ $ python3 morphological_expander.py abstraktioner
 
 ### Output:
 
-Expanding abstraktioner. No language code provided. Default is Swedish (sv).
-abstraktion
-abstraktions
-abstraktionen
-abstraktioner
-abstraktionens
-abstraktioners
-abstraktionerna
-abstraktionernas
+Expanding abstraktioner. No language code provided. Default is Swedish (sv).<br/>
+abstraktion<br/>
+abstraktions<br/>
+abstraktionen<br/>
+abstraktioner<br/>
+abstraktionens<br/>
+abstraktioners<br/>
+abstraktionerna<br/>
+abstraktionernas<br/>
