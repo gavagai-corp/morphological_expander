@@ -1,4 +1,3 @@
-
 10-krona	10-krona	N;INDF;NOM;SG
 10-krona	10-kronan	N;DEF;NOM;SG
 10-krona	10-kronans	N;DEF;GEN;SG
