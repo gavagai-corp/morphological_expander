@@ -10,7 +10,7 @@ Clone or download this repository to your own machine. No external libraries are
 
 Runs with Python from the command line. Takes two arguments, the word to be re-inflected and the corresponding language code (ISO 639). If no code is provided, Swedish (sv) is taken as the default.
 
-The functionality can also be used in an interactive python session, by importing the library in the normal way.
+The functionality can also be used in an interactive Python session, by importing the library in the normal way:<br/>import morphological_expander<br/>from morphological_expander import *
 
 ### Example
 
