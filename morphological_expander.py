@@ -1,7 +1,7 @@
 import re
 
 
-def lemmatise(surface_form, language):
+def lemmatize(surface_form, language):
     with open('resources/' + language + '.txt') as f:
         for line in f:
             if re.match(surface_form, line):
