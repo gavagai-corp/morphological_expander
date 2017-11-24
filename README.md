@@ -12,7 +12,7 @@ Python3 must of course be installed. Support for Python2 is to be discontinued a
 
 Runs with Python3 from the command line. Takes two arguments, the word to be re-inflected and the corresponding language code (ISO 639). If no code is provided, Swedish (sv) is taken as the default.
 
-The functionality can also be used in an interactive python session, by importing the library in the normal way.
+The functionality can also be used in an interactive python session, by importing the library in the normal way. There are some issues with supplying non ascii characters through a bash shell.
 
 ### Example
 
