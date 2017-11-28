@@ -14,7 +14,7 @@ Runs with Python3 from the command line. Takes two arguments, the word to be re-
 
 The functionality can also be used in an interactive python session, by importing the library in the normal way:<br/>import morphological_expander<br/>OR<br/>from morphological_expander import * <br/> There are some issues with supplying non ascii characters through a bash shell.
 
-### Example
+## Example
 
 #### Input:
 
@@ -31,3 +31,7 @@ abstraktionens<br/>
 abstraktioners<br/>
 abstraktionerna<br/>
 abstraktionernas<br/>
+
+## Adding New Languages
+
+The library can be run with any of the raw resources from [UniMorph](https://unimorph.github.io/), if the relevant file is added to the resources folder in the cloned repository. However, there is an initial blank line which must first be removed.
