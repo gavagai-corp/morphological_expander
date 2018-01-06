@@ -16,13 +16,19 @@ def inflect_pole(pole_file, pole_language_code):
     print('{} terms in pole initially.'.format(len_existing_pole_terms))
 
     retrieved_expansions = []
-
+    failed_terms = []
     count = 0
 
     for term in existing_pole_terms:
-        reinflections = get_related_morphological_forms(term, pole_language_code)
-        if len(reinflections) > 0:
-            retrieved_expansions += reinflections
+
+        try:
+            reinflections = get_related_morphological_forms(term, pole_language_code)
+            if len(reinflections) > 0:
+                retrieved_expansions += reinflections
+        except:
+            failed_terms.append(term)
+            term += ' FAIL'
+
         count += 1
         print('Prog:', round(100 * count / len_existing_pole_terms, 2), term)
 
@@ -32,6 +38,7 @@ def inflect_pole(pole_file, pole_language_code):
 
     print('{} terms in pole after reinflection.'.format(len(new_expanded_pole)))
     print(new_expanded_pole)
+    print(failed_terms)
 
     with open(pole_file + '_exp', mode='w', encoding='utf8') as f:
         for term in new_expanded_pole:
