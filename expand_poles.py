@@ -24,7 +24,7 @@ def inflect_pole(pole_file, pole_language_code):
         if len(reinflections) > 0:
             retrieved_expansions += reinflections
         count += 1
-        print('Prog:', round(100 * count / len_existing_pole_terms, 2))
+        print('Prog:', round(100 * count / len_existing_pole_terms, 2), term)
 
     terms_to_add = list(set(retrieved_expansions))
 
@@ -32,6 +32,10 @@ def inflect_pole(pole_file, pole_language_code):
 
     print('{} terms in pole after reinflection.'.format(len(new_expanded_pole)))
     print(new_expanded_pole)
+
+    with open(pole_file + '_exp', mode='w', encoding='utf8') as f:
+        for term in new_expanded_pole:
+            f.write(term + '\n')
 
 
 def inflect_multiple_poles(directory):
