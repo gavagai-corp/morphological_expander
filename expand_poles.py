@@ -34,13 +34,13 @@ def inflect_pole(pole_file, pole_language_code):
 
     terms_to_add = list(set(retrieved_expansions))
 
-    new_expanded_pole = list(set(existing_pole_terms + terms_to_add))
+    new_expanded_pole = sorted(list(set(existing_pole_terms + terms_to_add)))
 
     print('{} terms in pole after reinflection.'.format(len(new_expanded_pole)))
     print(new_expanded_pole)
     print(failed_terms)
 
-    with open(pole_file + '_exp', mode='w', encoding='utf8') as f:
+    with open(pole_file[:-4] + '_exp.txt', mode='w', encoding='utf8') as f:
         for term in new_expanded_pole:
             f.write(term + '\n')
 
@@ -48,6 +48,3 @@ def inflect_pole(pole_file, pole_language_code):
 def inflect_multiple_poles(directory):
     for file in os.listdir(directory):
         inflect_pole(directory + '/' + file, directory[-2:])
-
-
-inflect_pole('poles/fr/fr_pos.txt', 'fr')
