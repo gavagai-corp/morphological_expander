@@ -1,6 +1,7 @@
 import os
 from morphological_expander import get_related_morphological_forms
 
+
 def inflect_pole(pole_file, pole_language_code):
     """Takes a txt filepath, finds any new inflections from the resource and saves a new file with these added.
     Any existing duplicates are removed in passing."""
@@ -48,3 +49,18 @@ def inflect_pole(pole_file, pole_language_code):
 def inflect_multiple_poles(directory):
     for file in os.listdir(directory):
         inflect_pole(directory + '/' + file, directory[-2:])
+
+
+def count_lines_in_file(filename):
+    return sum(1 for line in open(filename) if (len(line.strip()) > 0))
+
+
+def directory_stats(directory):
+    files = os.listdir(directory)
+    print('\n\t\t\t\t', 'Before', '\t', 'After', '\t\t', 'Diff')
+    for polefile in files:
+        expanded_pole = polefile[:-4] + '_exp.txt'
+        if expanded_pole in files:
+            before = count_lines_in_file(directory + '/' + polefile)
+            after = count_lines_in_file(directory + '/' + expanded_pole)
+            print(polefile, '\n\t\t\t\t', before, '\t\t', after, '\t\t', after - before, '\n')
