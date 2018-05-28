@@ -4,7 +4,7 @@ A Python wrapper to morphologically expand terms using the [UniMorph](https://un
 
 ## How to get started
 
-Clone or download this repository to your own machine. No external libraries are required, so no installation is needed as long as the folder named 'resources' is included. The tool currently works for Swedish, French and Spanish. This may be extended by adding the UniMorph file of the desired language in 'resources'.
+Clone or download this repository to your own machine. No external libraries are required, so no installation is needed as long as the folder named 'resources' is included. The tool currently works for Swedish, French and Spanish. This may be extended by adding the UniMorph file of the desired language in 'resources'. (There is an initial blank line which must be removed).
 
 Python3 must of course be installed. Support for Python2 is to be discontinued and its use should not be encouraged. No special effort has therefore been made to make this package backwards compatable with Python2.
 
