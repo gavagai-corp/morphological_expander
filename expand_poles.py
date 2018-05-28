@@ -3,7 +3,7 @@ import sys
 from morphological_expander import get_related_morphological_forms
 
 
-def inflect_pole(pole_file, pole_language_code):
+def inflect_pole(pole_file, pole_language_code, mark_not_expanded=True):
     """Takes a txt filepath, finds any new inflections from the resource and saves a new file with these added.
     Any existing duplicates are removed in passing."""
     existing_pole_terms = []
@@ -48,7 +48,11 @@ def inflect_pole(pole_file, pole_language_code):
         for term in new_expanded_pole:
             f.write(term + '\n')
         for term in not_expanded:
-            f.write("* {}\n".format(term))
+            if mark_not_expanded:
+                marker = "* "
+            else:
+                marker = ""
+            f.write("{}{}\n".format(marker, term))
 
 
 def inflect_multiple_poles(directory):
@@ -75,7 +79,7 @@ if __name__ == "__main__":
     try:
         input_file = sys.argv[1]
         language = sys.argv[2]
-        inflect_pole(input_file, language)
+        inflect_pole(input_file, language, mark_not_expanded=False)
     except:
         print("Usage: python3 expand_poles.py <input_file> <iso639-1 language code>")
         print("Entries marked with * in the output have not been morphologically expanded "
