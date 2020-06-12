@@ -15,9 +15,10 @@ def expand_lemma_to_surface_forms(lemma_to_expand, language_code):
 
     with open('resources/' + language_code + '.txt', encoding='utf8') as f:
         for line in f:
-            current_lemma, surface_form, _ = line.split('\t')
-            if current_lemma == lemma_to_expand:
-                surface_forms.append(surface_form)
+            if len(line.strip()) > 0:
+                current_lemma, surface_form, _ = line.split('\t')
+                if current_lemma == lemma_to_expand:
+                    surface_forms.append(surface_form)
     return set(surface_forms)
 
 

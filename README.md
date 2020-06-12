@@ -34,4 +34,4 @@ abstraktionernas<br/>
 
 ## Adding New Languages
 
-The library can be run with any of the raw resources from [UniMorph](https://unimorph.github.io/), if the relevant file is added to the resources folder in the cloned repository. However, there is an initial blank line which must first be removed.
+The library can be run with any of the raw resources from [UniMorph](https://unimorph.github.io/), if the relevant file is added to the resources folder in the cloned repository. 
