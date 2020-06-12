@@ -13,7 +13,7 @@ def inflect_pole(pole_file, pole_language_code, mark_not_expanded=True):
             existing_pole_terms.append(line.strip())
 
     print('Pole:', pole_file)
-    print(existing_pole_terms)
+    # print(existing_pole_terms)
     len_existing_pole_terms = len(existing_pole_terms)
     print('{} terms in pole initially.'.format(len_existing_pole_terms))
 
@@ -33,6 +33,7 @@ def inflect_pole(pole_file, pole_language_code, mark_not_expanded=True):
         except:
             failed_terms.append(term)
             term += ' FAIL'
+            raise
 
         count += 1
         print('Prog:', round(100 * count / len_existing_pole_terms, 2), term)
@@ -41,8 +42,8 @@ def inflect_pole(pole_file, pole_language_code, mark_not_expanded=True):
 
     print('{} terms in pole after reinflection.'.format(len(new_expanded_pole)))
     print('{} terms form the original list were not expanded.'.format(len(not_expanded)))
-    print(new_expanded_pole)
-    print(failed_terms)
+    # print(new_expanded_pole)
+    # print(failed_terms)
 
     with open(pole_file[:-4] + '_exp.txt', mode='w', encoding='utf8') as f:
         for term in new_expanded_pole:
@@ -84,3 +85,4 @@ if __name__ == "__main__":
         print("Usage: python3 expand_poles.py <input_file> <iso639-1 language code>")
         print("Entries marked with * in the output have not been morphologically expanded "
               "and require manual attention.")
+        raise
